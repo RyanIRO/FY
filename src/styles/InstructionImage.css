@@ -1,0 +1,53 @@
+/* Contenedor de la instrucción */
+.instruction-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 15px; /* Añadir padding para evitar que el contenido toque los bordes en dispositivos pequeños */
+  }
+  
+  /* Imagen de la instrucción */
+  .instruction-image {
+    max-width: 100%;
+    height: auto;
+    display: inline-block; 
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo del texto de la instrucción */
+  .instruction-text h2 {
+    font-size: 24px;
+    color: #a89fa4;
+    margin: 10px 0; /* Añadir margen para separar el título del texto */
+    animation: fadeIn 1.5s ease-in-out; /* Animación de entrada */
+  }
+  
+  .instruction-text p {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0; /* Añadir margen para separar el párrafo del contenido circundante */
+    animation: fadeIn 2s ease-in-out; /* Animación de entrada */
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 600px) {
+    .instruction-text h2 {
+      font-size: 20px; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+  
+    .instruction-text p {
+      font-size: 16px; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+  }
+  

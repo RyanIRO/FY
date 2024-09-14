@@ -1,0 +1,133 @@
+.next-animation {
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f8ff; /* Fondo azul claro */
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #f0f8ff 0%, #e0f7fa 100%);
+}
+
+.flowers-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: fadeIn 1s ease-out, floatUp 3s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  color: #ff69b4; /* Color rosa vibrante para las flores */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 1s ease-out;
+}
+
+.press-me-button, 
+.next-button { /* Aplicar los mismos estilos a ambos botones */
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #74cf76; /* Naranja vibrante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 450%;
+}
+
+.press-me-button:hover,
+.next-button:hover {
+  background-color: #f4511e; /* Naranja más oscuro */
+  transform: scale(1.1); /* Pequeño zoom al hacer hover */
+}
+
+.beautiful-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #479ce7; /* Rosa vibrante */
+  font-size: 1.8rem;
+  animation: fadeIn 1s ease-out, popIn 1.5s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.shrek {
+  width: 40%;
+  animation: slideIn 1s ease-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra para la imagen */
+  border-radius: 15px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animaciones adicionales */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Aplicar animación "bounce" al botón de "Presióname" */
+.press-me-button {
+  animation: bounce 2s infinite;
+}
+

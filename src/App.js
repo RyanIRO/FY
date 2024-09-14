@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Greeting from './components/Greeting';
+import MemoryGame from './components/MemoryGame';
+import NextAnimation from './components/NextAnimation';
+import PasswordScreen from './components/PasswordScreen'; // Importa el componente PasswordScreen
 
-function App() {
+const App = () => {
+  const [stage, setStage] = useState('greeting');
+
+  const handleStart = () => {
+    setStage('memoryGame');
+  };
+
+  const handleNext = () => {
+    setStage('nextAnimation');
+  };
+
+  const handlePasswordScreen = () => {
+    setStage('passwordScreen');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {stage === 'greeting' && <Greeting onStart={handleStart} name="Teffi" />}
+      {stage === 'memoryGame' && <MemoryGame onNext={handleNext} />}
+      {stage === 'nextAnimation' && <NextAnimation onNext={handlePasswordScreen} />}
+      {stage === 'passwordScreen' && <PasswordScreen onPasswordSubmit={handleNext} />}
     </div>
   );
-}
+};
 
 export default App;

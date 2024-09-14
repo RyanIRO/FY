@@ -22,7 +22,7 @@ const MemoryGame = ({ onNext }) => {
   const [matchedPairs, setMatchedPairs] = useState([]);
   const [showHeart, setShowHeart] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-
+  console.log(setCards)
   const handleFlip = (index) => {
     if (flippedCards.length === 2 || flippedCards.includes(index)) return;
 

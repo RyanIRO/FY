@@ -3,7 +3,7 @@ import Greeting from './components/Greeting';
 import MemoryGame from './components/MemoryGame';
 import NextAnimation from './components/NextAnimation';
 import PasswordScreen from './components/PasswordScreen'; // Importa el componente PasswordScreen
-
+console.log('hola')
 const App = () => {
   const [stage, setStage] = useState('greeting');
 
